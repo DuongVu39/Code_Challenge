@@ -2,7 +2,7 @@ import numpy as np
 import pandas s pd
 
 
-def create_labels(df, time_range=40):  # Tested [Y]
+def create_labels(df, time_range=40):  # Tested [N]
 
     """
     Create labels with a time lapse
