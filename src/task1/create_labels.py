@@ -2,7 +2,7 @@ import numpy as np
 import pandas s pd
 
 
-def create_labels(df, time_range=40):  # Tested [N]
+def create_labels(df, time_range=40):  # Tested [Y]
 
     """
     Create labels with a time lapse
@@ -27,7 +27,7 @@ def create_labels(df, time_range=40):  # Tested [N]
     wind_turbine = wind_turbine.reset_index().iloc[:,1:29]
     
     # Creating label:
-    for i in range(time_range):
+    for i in range(1,time_range+1):
         wind_turbine["status_shift"] = wind_turbine.groupby("unit_number")['status'].transform(lambda g: g.shift(periods=-i))
         wind_turbine['mark'] = 0 # default value
         wind_turbine['mark'] = wind_turbine['mark'] + np.where(wind_turbine["status_shift"]==0.0, 0, 1)
