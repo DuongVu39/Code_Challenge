@@ -1,6 +1,10 @@
 # Notebook
 
-Handle missing_value:
+## Wrangling 
+
+Operation3 is categorical --> one hot encoding 
+
+## Handle missing_value:
 
 Take1:
 
@@ -20,7 +24,7 @@ Take3:
 
 
 
-Splitting Train - Test - Validation:
+## Splitting Train - Test - Validation:
 
 Take1:
 
