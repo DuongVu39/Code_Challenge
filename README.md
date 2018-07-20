@@ -12,15 +12,19 @@ Duong Vu
 
 #### Task 1 - Classify wind turbine failure
 
+![](assets/wind_turbine.jpg)
+
 
 
 #### Task 2 - Predict city pollution 
+
+![](assets/polution.png)
 
 
 
 ### Notebook
 
-A writeup explaining any significant design decisions and your reasons for making them: [Notebook](doc/notebook)
+A writeup explaining any significant design decisions and your reasons for making them: [Notebook](doc/notebook.md)
 
 
 
@@ -33,3 +37,4 @@ A writeup explaining any significant design decisions and your reasons for makin
 - sklearn
 - keras
 - matplotlib
+- seaborn

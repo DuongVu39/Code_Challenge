@@ -2,7 +2,7 @@
 
 ## Wrangling 
 
-Operation3 is categorical --> one hot encoding 
+Operation3 is categorical --> `pd.get_dummies()`
 
 
 
@@ -42,31 +42,40 @@ Take1:
 
  From 34 678 to (633 x 2) obs
 
--  Pros:
-  - Quick 
-- Cons:
-  - Lose lots of information
-  - Unrealistic assumption
+Pros:
+
+- Quick 
+
+Cons:
+
+- Lose lots of information
+- Unrealistic assumption about the world (balanced datasest while validation may not be balance)
 
 #### Upsampling:
 
-Copy and paste the one with label 1 
+Copy and paste the ones with label 1 
 
--  Pros:
-  - Quick 
-  - 
-- Cons:
-  - Unrealistic assumption
+Pros:
+
+- Quick
+
+Cons:
+
+- Unrealistic assumption - messing with labels distribution
 
 ### Ensemble:
 
 Get 633 label 1 with different 633 label 0 and fit several models. 
 
-- Pros:
-  - Retain more information
-- Cons:
-  - Time complexity
-  - Unrealistic assumption about the world (balanced datasest while validation may not be balance)
+Pros:
+
+- Retain more information
+- taking into account of several obs of label 0
+
+Cons:
+
+- Time complexity
+- still unrealistic assumption with balanced label distribution
 
 #### Oversampling 
 
@@ -75,7 +84,6 @@ Get 633 label 1 with different 633 label 0 and fit several models.
 Pros:
 
 - Create synthetic samples
-- 
 
 Cons:
 
@@ -91,8 +99,6 @@ Apply weight to the label:
 Pros:
 
 - Let the model learns the imbalance of the dataset
-
-
 
 Cons:
 
