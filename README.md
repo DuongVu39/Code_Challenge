@@ -14,11 +14,15 @@ Duong Vu
 
 ![](assets/wind_turbine.jpg)
 
+Classify if the turbine will break down within the next 40 days
+
 
 
 #### Task 2 - Predict city pollution 
 
 ![](assets/polution.PNG)
+
+Predict the pollution value after 6 hours. 
 
 
 
