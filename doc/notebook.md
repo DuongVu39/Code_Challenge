@@ -48,7 +48,7 @@ Pros:
 
 Cons:
 
-- Lose lots of information
+- Lose lots of information/ obs
 - Unrealistic assumption about the world (balanced datasest while validation may not be balance)
 
 #### Upsampling:
@@ -108,7 +108,7 @@ Cons:
 
 ## Modelling
 
-So with complete case to handle missing value, smote to oversample imbalanced dataset, basic models already produce good result but looking at the area under the Receiver Operator curve, LR is the most balanced model.
+So with **complete case** to handle missing value, **smote** to oversample imbalanced dataset, basic models already produce good result but looking at the area under the Receiver Operator curve, LR is the most balanced model.
 
 - Logistic Regression: more than 80% accuracy
 
@@ -126,4 +126,5 @@ So with complete case to handle missing value, smote to oversample imbalanced da
 
 
 
-Neural Network
+Feed Forward Neural Network
+
