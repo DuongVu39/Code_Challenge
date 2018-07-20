@@ -108,11 +108,20 @@ Cons:
 
 ## Modelling
 
-Basic model: already good result
+So with complete case to handle missing value, smote to oversample imbalanced dataset, basic models already produce good result but looking at the area under the Receiver Operator curve, LR is the most balanced model.
 
-- Logistic Regression: more than 80%
-- Random Forest
-- K Nearest Neighbor
+- Logistic Regression: more than 80% accuracy
+
+  ![](..\assets\LR.PNG)
+
+- Random Forest: seems like over fitting, 99%
+
+  ![](..\assets\RFC.PNG)
+
+- K Nearest Neighbor: high specificity 
+
+  ![](..\assets\KNN.PNG)
+
 - Support Vector Machine: was included at first but taking forever to train so I excluded it.
 
 
