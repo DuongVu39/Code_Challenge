@@ -126,5 +126,10 @@ So with **complete case** to handle missing value, **smote** to oversample imbal
 
 
 
-Feed Forward Neural Network
+**Feed Forward Neural Network**
 
+Train accuracy: 82%, test accuracy is 78%
+
+![](../assets/NN.PNG)
+
+With 64 neurons, the test accuracy is 81.5% and train accuracy is 83.8%

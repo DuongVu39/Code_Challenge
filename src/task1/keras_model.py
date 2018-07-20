@@ -3,8 +3,8 @@ from keras.models import Sequential
 from keras.layers import BatchNormalization
 from keras.layers.core import Dense, Dropout
 
-def create_model(n_layers, activation, n_feats, dropout_rate=0.2,
-                loss="categorical_crossentropy", optimizer='adam'):  # Tested [N]
+def keras_model(n_layers, activation, n_feats, dropout_rate=0.2,
+                loss="categorical_crossentropy"):  # Tested [N]
     """
     Creates and compiles a fully-connected feed forward neural network model using Keras
 
@@ -17,7 +17,6 @@ def create_model(n_layers, activation, n_feats, dropout_rate=0.2,
         dropout_rate (int): Default=0.2. Determines dropout rate for dropout layer.
         loss (str): Loss function to use when compiling the model.
                     Will be used by the optimizer during training to determine fit
-        optimizer (str): Optimizer to use in training the model.
         
     Returns:
         (keras.model) Compiled model containing the desired Dense layers.
@@ -25,17 +24,19 @@ def create_model(n_layers, activation, n_feats, dropout_rate=0.2,
     """
     
     model = Sequential()
-    model.add(Dense(32, activation='relu', input_shape = (n_feats,)))
+    model.add(BatchNormalization())
+    model.add(Dense(64, activation='relu', input_shape = (n_feats,)))
     
     for i in range(1, n_layers):  # Add each of the desired layers
-        model.add(Dense(32, activation='relu'))
+        if i % 3 == 0:
+            model.add(Dropout(dropout))
+        model.add(Dense(64, activation='relu'))
         
     model.add(Dropout(dropout))        
     
     model.add(Dense(2, activation='softmax'))
-    model.compile(optimizer=optimizer, 
+    model.compile(optimizer='adam', 
                   loss=loss, 
                   metrics=['accuracy'])
 
-    
-    return model
+    return models
