@@ -36,7 +36,7 @@ Take1:
 
 
 
-### Handle Imbalanced dataset
+## Handle Imbalanced dataset
 
 #### Downsizing:
 
@@ -104,3 +104,17 @@ Cons:
 
 - More complicated
 
+
+
+## Modelling
+
+Basic model: already good result
+
+- Logistic Regression: more than 80%
+- Random Forest
+- K Nearest Neighbor
+- Support Vector Machine: was included at first but taking forever to train so I excluded it.
+
+
+
+Neural Network

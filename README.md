@@ -18,7 +18,7 @@ Duong Vu
 
 #### Task 2 - Predict city pollution 
 
-![](assets/polution.png)
+![](assets/polution.PNG)
 
 
 
