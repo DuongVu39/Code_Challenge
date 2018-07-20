@@ -1,5 +1,5 @@
 import numpy as np
-import pandas s pd
+import pandas as pd
 
 
 def create_labels(df, time_range=40):  # Tested [Y]
@@ -39,6 +39,9 @@ def create_labels(df, time_range=40):  # Tested [Y]
         
     # Check if there is any fail during the time range, if not, the accumulate status column should be 0.9
     wind_turbine['label'] = np.where(wind_turbine["mark"]==0.0, 0, 1)
+    
+    # Excluding the last time_range (default=40) days of each unit
+    wind_turbine = wind_turbine.dropna(subset=['status_shift'])
     
     # Exclude all unnecessary columns:
     final_col = [ i for i in wind_turbine.columns if i not in ['mark', 'status_shift']]
