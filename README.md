@@ -47,7 +47,7 @@ Created by</a></h5>
 <h4 align="center">
   <br>
 
-![](D:/Job/Code%20Challenge/Canvas%20Analytics/Code_Challenge/assets/wind_turbine.jpg)
+![](assets/wind_turbine.jpg)
 
 Classify if the turbine will break down within the next 40 days
 
@@ -60,7 +60,7 @@ Classify if the turbine will break down within the next 40 days
 <h4 align="center">
   <br>
 
-![](D:/Job/Code%20Challenge/Canvas%20Analytics/Code_Challenge/assets/polution.PNG)
+![](assets/polution.PNG)
 
 Predict the pollution value after 6 hours. 
 <br>
