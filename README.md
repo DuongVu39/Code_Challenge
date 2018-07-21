@@ -2,11 +2,11 @@
 
 Jul 2018
 
-<h4 align="center">
+<h3 align="center">
   <br>
 Classification and prediction project
 <br>
-</h1>
+</h3>
 
 <h5 align="center">
 Created by</a></h5>
@@ -44,17 +44,27 @@ Created by</a></h5>
 
 #### Task 1 - Classify wind turbine failure
 
-<h4 align="center">![](D:/Job/Code%20Challenge/Canvas%20Analytics/Code_Challenge/assets/wind_turbine.jpg)</h4>
+<h4 align="center">
+  <br>
+
+![](D:/Job/Code%20Challenge/Canvas%20Analytics/Code_Challenge/assets/wind_turbine.jpg)
 
 Classify if the turbine will break down within the next 40 days
+
+<br></h4>
 
 
 
 #### Task 2 - Predict city pollution
 
-<h4 align="center">![](D:/Job/Code%20Challenge/Canvas%20Analytics/Code_Challenge/assets/polution.PNG)</h4>
+<h4 align="center">
+  <br>
+
+![](D:/Job/Code%20Challenge/Canvas%20Analytics/Code_Challenge/assets/polution.PNG)
 
 Predict the pollution value after 6 hours. 
+<br>
+</h4>
 
 ### Notebook
 
@@ -94,7 +104,7 @@ The model is actually a pipeline for both tasks which contains:
 
 ### Folder Structure
 
-The hierarchy template will look like this:
+The hierarchy of this repository is described like below:
 
 ```
      .
@@ -105,12 +115,12 @@ The hierarchy template will look like this:
      |   -- predictive_maintenance_dataset.csv
      |   -- forecasting_dataset.csv
      |-- doc 
-     |   -- notebook.md         # electronic lab notebook recording your experiments
+     |   -- notebook.md         # electronic lab notebook
      |   -- manuscript.md       
      |-- results
      |-- src                    # source code
-     |-- test				   # tests for functions
+     |-- test			# tests for functions
      |-- assets                 # store images
      |-- bin
-     |   -- # keep all the files you want to delete but not sure whether you will need it later
+     |   -- # keep all the files I want to delete but not sure whether I will need it later
 ```
