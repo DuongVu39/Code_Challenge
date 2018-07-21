@@ -162,6 +162,8 @@ Time range: around 351 days of 8421 obs.
 
 Similar to task 1: try complete case first and impute in the pipeline?
 
+Maybe plot and take a look to find if there is any seasonal trend. If yes, use it for imputation
+
 
 
 ### Categorical features

@@ -3,26 +3,19 @@
 Jul 2018
 
 <h3 align="center">
-  <br>
 Classification and prediction project
 <br>
 </h3>
 
 <h5 align="center">
-Created by</a></h5>
+<a>Created by</a></h5>
 
-<h4 align="center">
+<h4 align="center"><a>
 
 [Duong Vu](https://github.com/DuongVu39)
 
 </a></h4>
 
-<br>
-<h4 align="center">
-
-
-
-<br>
 <h4 align="center">
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -53,7 +46,7 @@ Classify if the turbine will break down within the next 40 days
 
 <br></h4>
 
-
+For a closer look at the process, please review the [Jupyter Notebook](src/task1/Scratch.ipynb)
 
 #### Task 2 - Predict city pollution
 
@@ -66,9 +59,13 @@ Predict the pollution value after 6 hours.
 <br>
 </h4>
 
+For a closer look at the process, please review the [Jupyter Notebook](src/task2/Task2.ipynb)
+
+
+
 ### Notebook
 
-A writeup explaining any significant design decisions and your reasons for making them: [Notebook](doc/notebook.md)
+A writeup explaining design decisions, potential works and the reasons for making current choices: [Notebook](doc/notebook.md)
 
 
 
@@ -85,7 +82,7 @@ The model is actually a pipeline for both tasks which contains:
 
 ## Usage
 
-
+Download the model saved in pickle file in [Result](results/) folder
 
 
 
@@ -119,6 +116,8 @@ The hierarchy of this repository is described like below:
      |   -- manuscript.md       
      |-- results
      |-- src                    # source code
+     |   -- task1               # code specific for task 1
+     |   -- task2               # code specific for task 2
      |-- test			# tests for functions
      |-- assets                 # store images
      |-- bin
