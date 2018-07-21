@@ -133,3 +133,4 @@ Train accuracy: 82%, test accuracy is 78%
 ![](../assets/NN.PNG)
 
 With 64 neurons, the test accuracy is 81.5% and train accuracy is 83.8%
+
