@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
 
-def get_dummies(df, col_name):  # Tested [N]
+# Do I want to pass a list or do I want to pass only a string or both?
+
+def get_dummies(df, col_name):  # Tested [P]
 
     """
     Transform categorical variable to dummies and select one less level to prevent colinearity 
