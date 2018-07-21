@@ -22,6 +22,8 @@ Classify if the turbine will break down within the next 40 days
 
 ![](assets/polution.PNG)
 
+
+
 Predict the pollution value after 6 hours. 
 
 

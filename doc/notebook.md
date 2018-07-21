@@ -1,12 +1,14 @@
 # Notebook
 
-## Wrangling 
+## 1. Task 1
+
+### a. Wrangling
 
 Operation3 is categorical --> `pd.get_dummies()`
 
 
 
-## Handle missing_value:
+### b. Handle missing_value:
 
 Take1:
 
@@ -26,7 +28,7 @@ Take3:
 
 
 
-## Splitting Train - Test - Validation:
+### c. Splitting Train - Test - Validation:
 
 Take1:
 
@@ -36,7 +38,7 @@ Take1:
 
 
 
-## Handle Imbalanced dataset
+### d. Handle Imbalanced dataset
 
 #### Downsizing:
 
@@ -63,7 +65,7 @@ Cons:
 
 - Unrealistic assumption - messing with labels distribution
 
-### Ensemble:
+#### Ensemble:
 
 Get 633 label 1 with different 633 label 0 and fit several models. 
 
@@ -106,7 +108,7 @@ Cons:
 
 
 
-## Modelling
+### e. Modelling
 
 So with **complete case** to handle missing value, **smote** to oversample imbalanced dataset, basic models already produce good result but looking at the area under the Receiver Operator curve, LR is the most balanced model.
 
@@ -133,4 +135,46 @@ Train accuracy: 82%, test accuracy is 78%
 ![](../assets/NN.PNG)
 
 With 64 neurons, the test accuracy is 81.5% and train accuracy is 83.8%
+
+
+
+### f. Feature Engineering
+
+- Probably can exploit the time series character of this data to create new features
+
+
+
+## 2. Task 2
+
+Time range: around 351 days of 8421 obs.
+
+
+
+### Splitting Train - Test - Validation
+
+- Val: Last 10% of total days
+- Test: next last 20% of total days
+- Train: the rest of total days
+
+
+
+### Handle missing value
+
+Similar to task 1: try complete case first and impute in the pipeline?
+
+
+
+### Categorical features
+
+Level has 5 levels instead of 2 as in Task 1
+
+Still can use the get_dummies() from Task 1
+
+
+
+### Models
+
+
+
+### Feature Engineer
 
