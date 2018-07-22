@@ -3,7 +3,7 @@ import numpy as np
 
 # Do I want to pass a list or do I want to pass only a string or both?
 
-def get_dummies(df, col_name):  # Tested [P]
+def get_dummies(df):  # Tested [P]
 
     """
     Transform categorical variable to dummies and select one less level to prevent colinearity 
@@ -16,6 +16,15 @@ def get_dummies(df, col_name):  # Tested [P]
         df (dataframe): New dataframe with no categorical feature.
     """
     
-    df[col_name] = pd.get_dummies(df[col_name]).iloc[:,0]
+    if isinstance(col_name, list):  # Branch A
+        for i in col_name:
+            
+    
+    else:  # Branch B
+    num_level = len(set(df[col_name]))
+    
+    # Excluding one level to prevent colinearity
+    new_level = pd.get_dummies(df[col_name]).iloc[:,0:(num_level-1)]
+    
     
     return df
