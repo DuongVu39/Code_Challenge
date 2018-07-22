@@ -3,14 +3,14 @@ from keras.models import Sequential
 from keras.layers import BatchNormalization
 from keras.layers.core import Dense, Dropout
 
-def keras_model(n_layers, n_feats, dropout_rate=0.2,
-                loss="categorical_crossentropy"):  # Tested [N]
+def keras_model(n_layers=1, n_feats=25, dropout_rate=0.2,
+                loss="mean_squared_error"):  # Tested [N]
     """
     Creates and compiles a fully-connected feed forward neural network model using Keras
 
     Args:
-        n_layers (int): Number of hidden layers to include in the network.
-        n_feats (int): Number of features in the input data. Required to set input_shape
+        n_layers (int): Default=1. Number of hidden layers to include in the network.
+        n_feats (int): Default=25. Number of features in the input data. Required to set input_shape
         dropout_rate (int): Default=0.2. Determines dropout rate for dropout layer.
         loss (str): Loss function to use when compiling the model.
                     Will be used by the optimizer during training to determine fit
@@ -31,7 +31,7 @@ def keras_model(n_layers, n_feats, dropout_rate=0.2,
         
     model.add(Dropout(dropout_rate))        
     
-    model.add(Dense(2, activation='softmax'))
+    model.add(Dense(1, activation='sigmoid'))
     model.compile(optimizer='adam', 
                   loss=loss, 
                   metrics=['accuracy'])
