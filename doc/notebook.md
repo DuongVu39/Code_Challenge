@@ -126,7 +126,7 @@ So with **complete case** to handle missing value, **smote** to oversample imbal
 
 - Support Vector Machine: was included at first but taking forever to train so I excluded it.
 
-
+So it seems like even the score is high, the ROC curve is saying a different story and Logistic Regression actually has the best prediction power among these models.
 
 **Feed Forward Neural Network**
 
@@ -150,6 +150,8 @@ With **mean imputation** and **SMOTE upsampling**, the accuracy with the **Keras
    Could possibly do cross-validation
 
 Should do ROC for neural net but dont have time
+
+
 
 ### f. Feature Engineering
 
@@ -209,6 +211,12 @@ R squared score is: -0.024
 
 #### Ordinary Least Squared
 
+![](../assets/OLS.PNG)
+
+With test dataset:
+
+The test R squared is 0.473 (still less than Ridge and Lasso).
+
 
 
 #### Keras
@@ -229,5 +237,10 @@ However, the result is still worse than base model of Ridge or Lasso Regression.
 
    
 
+Failed to get Hyperopt to work, but seems like they donot have much example for regression problem. Will look into it later.
+
 ### Feature Engineer
 
+- Diff?
+- Correlation/ Auto-correlation
+- 
