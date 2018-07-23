@@ -23,6 +23,7 @@ def split_train_test_val(X, y, threshold=0.1):  # Tested [N]
     # Split Train, Test, Validation set
     total_obs = X.shape[0]
     thred = int(total_obs * threshold)
+    
     # For X
     Xval = X[ total_obs - thred : total_obs ]
     Xtest = X[ total_obs - thred * 2 : total_obs - thred ]
@@ -32,3 +33,5 @@ def split_train_test_val(X, y, threshold=0.1):  # Tested [N]
     yval = y[ total_obs - thred : total_obs ]
     ytest = y[ total_obs - thred * 2 : total_obs - thred ]
     ytrain = y[ : total_obs - thred * 2 ]
+    
+    return Xval, Xtest, Xtrain, yval, ytest, ytrain
