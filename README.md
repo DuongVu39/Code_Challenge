@@ -24,9 +24,8 @@ Classification and prediction project
 
 <h1></h1>
 <h4 align="center">
-  <a href="#main-features">Main Features</a> &nbsp;&nbsp;&nbsp;•&nbsp;
-  <a href="#Usage">Usage</a> &nbsp;&nbsp;&nbsp;•&nbsp;
-  <a href="#Dependencies">Dependencies</a> &nbsp;&nbsp;
+<a href="#notebook">Notebook</a> &nbsp;•&nbsp; <a href="#main-features">Main Features</a>&nbsp;&nbsp;•&nbsp;  <a href="#Usage">Usage</a>&nbsp;&nbsp;•&nbsp;<a href="#Dependencies">Dependencies</a> &nbsp;&nbsp;
+
 </h4>
 
 <br>
@@ -63,15 +62,25 @@ For a closer look at the process, please review the [Jupyter Notebook](src/task2
 
 
 
-### Notebook
+## Notebook
 
 A writeup explaining design decisions, potential works and the reasons for making current choices: [Notebook](doc/notebook.md)
+
+For log files, open using TensorBoard by typing below command in your terminal in where the log folder is:
+
+```
+tensorboard --logdir=logs
+```
+
+
 
 
 
 ## Main Features
 
-The model is actually a pipeline for both tasks which contains:
+The model is actually a pipeline for both tasks. 
+
+Task 1 pipeline contains:
 
 - Select only features appears in training set
 - Impute with the mean
@@ -80,9 +89,21 @@ The model is actually a pipeline for both tasks which contains:
 
 
 
+Task 2 pipeline contains:
+
+- Select only features appears in training set
+- Get dummies from categorical variable
+- Impute with the mean
+- Feed Forward Neural Network with Keras
+
+
+
 ## Usage
 
-Download the model saved in pickle file in [Result](results/) folder
+Download the model saved in pickle file in [Result](results/) folder:
+
+- Load in the pipeline first
+- Then load the keras model
 
 
 

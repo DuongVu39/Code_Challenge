@@ -1,4 +1,4 @@
-# Notebook
+# Notebook - Lab Diary
 
 ## 1. Task 1
 
@@ -136,7 +136,20 @@ Train accuracy: 82%, test accuracy is 78%
 
 With 64 neurons, the test accuracy is 81.5% and train accuracy is 83.8%
 
+#### Setting up pipeline 
 
+With **mean imputation** and **SMOTE upsampling**, the accuracy with the **Keras feed forward neural network** model is like below:
+
+| No. epoch | Batch size | Result                                                       |
+| --------- | ---------- | ------------------------------------------------------------ |
+| 1         | 1          | Train accuracy: 60%, MSE for test: 0.27, Accuracy: 70%       |
+| 5         | 5          | Train accuracy: 72%, MSE for test: 0.33, Test accuracy: 66%  |
+| 10        | 5          | Train accuracy: 73%, MSE for test: 0.13, Test accuracy: 86%  |
+| 20        | 5          | Train accuracy: 73.95%, MSE for test: 0.23, Test accuracy: 76% |
+
+   Could possibly do cross-validation
+
+Should do ROC for neural net but dont have time
 
 ### f. Feature Engineering
 
@@ -147,6 +160,8 @@ With 64 neurons, the test accuracy is 81.5% and train accuracy is 83.8%
 ## 2. Task 2
 
 Time range: around 351 days of 8421 obs.
+
+Setting the time as index
 
 
 
@@ -176,7 +191,43 @@ Still can use the get_dummies() from Task 1
 
 ### Models
 
+#### Ridge, Lasso and Elastic Net:
 
+```
+Fitting Ridge Regression model...
+R squared score is: 0.522
+
+Fitting Lasso model...
+R squared score is: 0.522
+
+Fitting Elastic Net model...
+R squared score is: 0.521
+
+Fitting Support Vector Regression model...
+R squared score is: -0.024
+```
+
+#### Ordinary Least Squared
+
+
+
+#### Keras
+
+After trying to do network configuration, I realize that since there are only 25 features, the number of neuron should not be more than that and decrease the number of neuron. The result immediately improve with only 10 epoch. This is probably because the neural learned noise from using too many neuron before. 
+
+However, the result is still worse than base model of Ridge or Lasso Regression. So I won't continue with the Neural Network.
+
+| No. epoch | Batch size | Result                    | No. of hidden layer | No. of neuron |
+| --------- | ---------- | ------------------------- | ------------------- | ------------- |
+| 1         | 1          | R squared for test: 0.326 | 1                   | 64            |
+| 5         | 5          | R squared for test: 0.447 | 1                   | 64            |
+| 7         | 5          | R squared for test: 0.493 | 1                   | 64            |
+| 7         | 5          | R squared for test: 0.485 | 2                   | 64            |
+| 20        | 5          | R squared for test: 0.379 | 2                   | 64            |
+| 78        | 5          | R squared for test: 0.523 | 2                   | 64            |
+| 10        | 5          | R squared for test: 0.489 | 2                   | 10            |
+
+   
 
 ### Feature Engineer
 
