@@ -18,13 +18,13 @@ Classification and prediction project
 
 <h4 align="center">
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Python version](https://img.shields.io/badge/Python-%3E3.6-ffdd1c.svg)](https://www.python.org/)
 
 </a></h4>
 
 <h1></h1>
 <h4 align="center">
-<a href="#notebook">Notebook</a> &nbsp;•&nbsp; <a href="#main-features">Main Features</a>&nbsp;&nbsp;•&nbsp;  <a href="#usage">Usage</a>&nbsp;&nbsp;•&nbsp;<a href="#dependencies">Dependencies</a> &nbsp;&nbsp;
+<a href="#notebook">Notebook</a> &nbsp;•&nbsp; <a href="#main-features">Main Features</a>&nbsp;&nbsp;•&nbsp;  <a href="#usage">Usage</a>&nbsp;&nbsp;•&nbsp;<a href="#dependencies">Dependencies</a> •&nbsp;<a href="#folder-structure">Folder Structure</a> &nbsp;&nbsp;
 
 </h4>
 
@@ -126,6 +126,22 @@ pl_load_in = joblib.load('../../results/task1_pipeline.pkl')
 
 # Then, load the Keras model:
 pl_load_in.named_steps['model'].model = load_model('../../results/task1_keras_model.h5')
+
+# Test the model:
+# Compute and print MSE for validation
+ypred = pl_load_in.predict(Xval)
+mse = mean_squared_error(yval, ypred)
+print("Mean squared error: %f" % (mse))
+
+# reset index for comparison (if yval already have clean index, this step can be omitted)
+yval2 = yval.reset_index(drop=True)
+
+# assign hard label (function hard_label() is in src.task1.reform_results)
+new_ypred=pd.DataFrame(ypred)[0].apply(hard_label)
+
+# Compute the accuracy: accuracy for validation
+accuracy = float(np.sum(new_ypred==yval2))/yval2.shape[0]
+print("accuracy: {}%".format(round(accuracy*100, 3)))
 ```
 
 
@@ -176,7 +192,7 @@ The hierarchy of this repository is described like below:
      |-- doc 
      |   -- notebook.md         # electronic lab notebook
      |   -- manuscript.md       
-     |-- results
+     |-- results		# storing all the result models 
      |-- src                    # source code
      |   -- task1               # code specific for task 1
      |   -- task2               # code specific for task 2
