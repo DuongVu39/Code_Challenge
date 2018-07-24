@@ -56,7 +56,7 @@ There is a column called `unit_number` which specifies which turbine it is, and 
 
 The task is to create a model that, when fed with operational  settings and sensor measurements (unit_number and time_stamp will not be  fed in), outputs 1 if the turbine will break down within the next 40  days, and 0 if not.
 
-For a closer look at the process, please review the [Jupyter Notebook](src/task1/Scratch.ipynb)
+For a closer look at the process, please review the [Jupyter Notebook](src/task1/Task1.ipynb)
 
 #### Task 2 - Predict city pollution
 
