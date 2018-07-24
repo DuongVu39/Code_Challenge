@@ -24,7 +24,7 @@ Classification and prediction project
 
 <h1></h1>
 <h4 align="center">
-<a href="#notebook">Notebook</a> &nbsp;•&nbsp; <a href="#main-features">Main Features</a>&nbsp;&nbsp;•&nbsp;  <a href="#Usage">Usage</a>&nbsp;&nbsp;•&nbsp;<a href="#Dependencies">Dependencies</a> &nbsp;&nbsp;
+<a href="#notebook">Notebook</a> &nbsp;•&nbsp; <a href="#main-features">Main Features</a>&nbsp;&nbsp;•&nbsp;  <a href="#usage">Usage</a>&nbsp;&nbsp;•&nbsp;<a href="#dependencies">Dependencies</a> &nbsp;&nbsp;
 
 </h4>
 
