@@ -2,6 +2,16 @@
 
 ## 1. Task 1
 
+### Assumptions:
+
+- The data is imbalanced, but I assume by training with balanced dataset, if it can generate well, it can do well in imbalanced dataset.
+
+- The correlation between features in the dataset is fine --> no dropping features
+
+- Using MSE + accuracy to measure the goodness of the model
+
+  
+
 ### a. Wrangling
 
 Operation3 is categorical --> `pd.get_dummies()`
@@ -14,7 +24,7 @@ Take1:
 
 - Dropping all missing value: from 118 883 to 34 678 obs. 
 
-
+  
 
 Take2:
 
@@ -24,7 +34,7 @@ Take2:
 
 Take3:
 
-- Impute using mean of unit
+- Impute using mean of unit (haven't done yet)
 
 
 
@@ -34,7 +44,17 @@ Take1:
 
 - Val: 2018
 - Test: 2016, 2017
-- Train:  rest
+- Train:  the rest (2014, 2015)
+
+
+
+Take2:  Realize train and test have similar amount of data, I re-split the data to
+
+- Val: 2018
+- Test: 2017
+- Train:  2014, 2015, 2016
+
+
 
 
 
@@ -65,7 +85,7 @@ Cons:
 
 - Unrealistic assumption - messing with labels distribution
 
-#### Ensemble:
+#### Ensemble: (hasn't tried yet)
 
 Get 633 label 1 with different 633 label 0 and fit several models. 
 
@@ -91,7 +111,7 @@ Cons:
 
 - Unrealistic assumption
 
-#### Costs sensitive learner
+#### Costs sensitive learner (hasn't tried yet)
 
 Apply weight to the label:
 
@@ -147,7 +167,9 @@ With **mean imputation** and **SMOTE upsampling**, the accuracy with the **Keras
 | 10        | 5          | Train accuracy: 73%, MSE for test: 0.13, Test accuracy: 86%  |
 | 20        | 5          | Train accuracy: 73.95%, MSE for test: 0.23, Test accuracy: 76% |
 
-   Could possibly do cross-validation
+
+
+Could possibly do cross-validation
 
 Should do ROC for neural net but dont have time
 
@@ -157,6 +179,22 @@ Should do ROC for neural net but dont have time
 
 - Probably can exploit the time series character of this data to create new features
 
+### Saving model
+
+Facing problem with saving keras model inside pipeline
+
+--> Saving pipeline and model separately
+
+
+
+Facing problem of loading the Keras model back
+
+--> Downgrade Keras version (2.0 --> 1.2) can help loading the model back.
+
+- But using Keras 1.2 slow down the fit step a lot. 
+
+  --> Using Keras 2.2 to build model and can use keras 1.2 to load it in and just run it to predict.
+
 
 
 ## 2. Task 2
@@ -165,7 +203,15 @@ Time range: around 351 days of 8421 obs.
 
 Setting the time as index
 
+### Assumptions:
 
+- The correlation between features in the dataset is fine --> no dropping features
+
+- Without domain knowledge, I still keep some abnormal values (-200, 0) in the model and assume those are valid values.
+
+- Using R squared and residual plot to measure the effectiveness of the model.
+
+  
 
 ### Splitting Train - Test - Validation
 
@@ -177,7 +223,7 @@ Setting the time as index
 
 ### Handle missing value
 
-Similar to task 1: try complete case first and impute in the pipeline?
+Impute in the pipeline instead of complete case because there are not many observations in this dataset.
 
 Maybe plot and take a look to find if there is any seasonal trend. If yes, use it for imputation
 
@@ -187,7 +233,7 @@ Maybe plot and take a look to find if there is any seasonal trend. If yes, use i
 
 Level has 5 levels instead of 2 as in Task 1
 
-Still can use the get_dummies() from Task 1
+Still can use the get_dummies() from Task 1 --> No need for that, use base function `pd.get_dummies()`
 
 
 
@@ -225,22 +271,22 @@ After trying to do network configuration, I realize that since there are only 25
 
 However, the result is still worse than base model of Ridge or Lasso Regression. So I won't continue with the Neural Network.
 
-| No. epoch | Batch size | Result                    | No. of hidden layer | No. of neuron |
-| --------- | ---------- | ------------------------- | ------------------- | ------------- |
-| 1         | 1          | R squared for test: 0.326 | 1                   | 64            |
-| 5         | 5          | R squared for test: 0.447 | 1                   | 64            |
-| 7         | 5          | R squared for test: 0.493 | 1                   | 64            |
-| 7         | 5          | R squared for test: 0.485 | 2                   | 64            |
-| 20        | 5          | R squared for test: 0.379 | 2                   | 64            |
-| 78        | 5          | R squared for test: 0.523 | 2                   | 64            |
-| 10        | 5          | R squared for test: 0.489 | 2                   | 10            |
-
-   
+| No. epoch | Batch size | Result                                       | No. of hidden layer | No. of neuron |
+| --------- | ---------- | -------------------------------------------- | ------------------- | ------------- |
+| 1         | 1          | R squared for test: 0.326                    | 1                   | 64            |
+| 5         | 5          | R squared for test: 0.447                    | 1                   | 64            |
+| 7         | 5          | R squared for test: 0.493                    | 1                   | 64            |
+| 7         | 5          | R squared for test: 0.485                    | 2                   | 64            |
+| 20        | 5          | R squared for test: 0.379                    | 2                   | 64            |
+| 78        | 5          | R squared for test: 0.523                    | 2                   | 64            |
+| 10        | 5          | R squared for test: 0.489                    | 2                   | 10            |
+| 10        | 5          | R squared for test: 0.498 / No dropout layer | 2                   | 10            |
 
 Failed to get Hyperopt to work, but seems like they donot have much example for regression problem. Will look into it later.
 
-### Feature Engineer
+### Feature Engineer (hasn't done yet)
 
 - Diff?
 - Correlation/ Auto-correlation
 - 
+

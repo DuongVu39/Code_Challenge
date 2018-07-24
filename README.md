@@ -45,7 +45,7 @@ Classify if the turbine will break down within the next 40 days
 
 <br></h4>
 
-`predictive_maintenance_dataset.csv` is a file that contains parameters and settings for many wind turbines: 
+[`predictive_maintenance_dataset.csv`](data/predictive_maintenance_dataset.csv) is a file that contains parameters and settings for many wind turbines: 
 
 - operational_setting_1
 - operational_setting_2
@@ -69,7 +69,7 @@ Predict the pollution value after 6 hours.
 <br>
 </h4>
 
-`forecasting_dataset.csv` is a file that contains pollution data for a  city. The task is to create a model that, when fed with columns co_gt,  nhmc, c6h6, s2, nox, s3, no2, s4, s5, t, rh, ah, and level, predicts the value of y six hours later. 
+[`forecasting_dataset.csv`](data/forecasting_dataset.csv) is a file that contains pollution data for a  city. The task is to create a model that, when fed with columns co_gt,  nhmc, c6h6, s2, nox, s3, no2, s4, s5, t, rh, ah, and level, predicts the value of y six hours later. 
 
 For a closer look at the process, please review the [Jupyter Notebook](src/task2/Task2.ipynb)
 
@@ -118,9 +118,15 @@ Download the model saved in pickle file in [Result](results/) folder.
 **For task 1:**
 
 - Load in the pipeline first
-- Then load the keras model in the pipeline.
+- Then load the keras model in the pipeline. (use **Keras 1.2** to load the model)
 
+```
+# Load the pipeline first:
+pl_load_in = joblib.load('../../results/task1_pipeline.pkl')
 
+# Then, load the Keras model:
+pl_load_in.named_steps['model'].model = load_model('../../results/task1_keras_model.h5')
+```
 
 
 
@@ -147,9 +153,11 @@ print("R squared score is:", r2_score(ytest,ypred).round(3))
 - missingno
 - imbalanced-learn
 - sklearn
-- keras
+- statsmodels
+- keras 
 - matplotlib
 - seaborn
+- scikitplot
 
 
 
