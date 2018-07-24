@@ -1,6 +1,6 @@
 # Code Challenge for Canvas Analytics
 
-Jul 2018
+Jul 18th, 2018
 
 <h3 align="center">
 Classification and prediction project
@@ -170,7 +170,7 @@ print("R squared score is:", r2_score(ytest,ypred).round(3))
 - imbalanced-learn
 - sklearn
 - statsmodels
-- keras 
+- keras 2.0 for modelling, 1.2 if just need to load model and use it.
 - matplotlib
 - seaborn
 - scikitplot
