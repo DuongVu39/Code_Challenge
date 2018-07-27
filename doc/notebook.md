@@ -156,6 +156,12 @@ Train accuracy: 82%, test accuracy is 78%
 
 With 64 neurons, the test accuracy is 81.5% and train accuracy is 83.8%
 
+![](../assets/ROC_NN.PNG)
+
+Not the best but better than other base models.
+
+
+
 #### Setting up pipeline 
 
 With **mean imputation** and **SMOTE upsampling**, the accuracy with the **Keras feed forward neural network** model is like below:
@@ -171,13 +177,13 @@ With **mean imputation** and **SMOTE upsampling**, the accuracy with the **Keras
 
 Could possibly do cross-validation
 
-Should do ROC for neural net but dont have time
-
 
 
 ### f. Feature Engineering
 
+- Created total days of each wind turbine, should try include them in the model to see if it helps improve the score
 - Probably can exploit the time series character of this data to create new features
+- 
 
 ### Saving model
 
@@ -210,6 +216,8 @@ Setting the time as index
 - Without domain knowledge, I still keep some abnormal values (-200, 0) in the model and assume those are valid values.
 
 - Using R squared and residual plot to measure the effectiveness of the model.
+
+- No lagged pollution
 
   
 
@@ -286,7 +294,8 @@ Failed to get Hyperopt to work, but seems like they donot have much example for 
 
 ### Feature Engineer (hasn't done yet)
 
-- Diff?
+- Median pollution? 
+- day of week, quarter --> weekly, quarterly seasonality
 - Correlation/ Auto-correlation
 - 
 

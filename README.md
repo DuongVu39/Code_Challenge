@@ -95,9 +95,9 @@ The model is actually a pipeline for both tasks.
 
 Task 1 pipeline contains:
 
+- Get dummies from categorical variable and drop 1 level
 - Select only features appears in training set
 - Impute with the mean
-- Get dummies from categorical variable and drop 1 level
 - Feed Forward Neural Network with Keras
 
 
@@ -193,7 +193,7 @@ The hierarchy of this repository is described like below:
      |   -- notebook.md         # electronic lab notebook
      |   -- manuscript.md       
      |-- results		# storing all the result models 
-     |-- src                    # source code
+     |-- src                    # source code used for both tasks
      |   -- task1               # code specific for task 1
      |   -- task2               # code specific for task 2
      |-- test			# tests for functions
