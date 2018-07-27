@@ -1,6 +1,6 @@
 # Code Challenge for Canvas Analytics
 
-Jul 2018
+Jul 18th, 2018
 
 <h3 align="center">
 Classification and prediction project
@@ -95,9 +95,9 @@ The model is actually a pipeline for both tasks.
 
 Task 1 pipeline contains:
 
+- Get dummies from categorical variable and drop 1 level
 - Select only features appears in training set
 - Impute with the mean
-- Get dummies from categorical variable and drop 1 level
 - Feed Forward Neural Network with Keras
 
 
@@ -170,7 +170,7 @@ print("R squared score is:", r2_score(ytest,ypred).round(3))
 - imbalanced-learn
 - sklearn
 - statsmodels
-- keras 
+- keras 2.0 for modelling, 1.2 if just need to load model and use it.
 - matplotlib
 - seaborn
 - scikitplot
@@ -193,7 +193,7 @@ The hierarchy of this repository is described like below:
      |   -- notebook.md         # electronic lab notebook
      |   -- manuscript.md       
      |-- results		# storing all the result models 
-     |-- src                    # source code
+     |-- src                    # source code used for both tasks
      |   -- task1               # code specific for task 1
      |   -- task2               # code specific for task 2
      |-- test			# tests for functions
