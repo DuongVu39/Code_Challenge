@@ -160,6 +160,10 @@ With 64 neurons, the test accuracy is 81.5% and train accuracy is 83.8%
 
 Not the best but better than other base models.
 
+**XGBoost**
+
+- Combination of several base models above
+
 
 
 #### Setting up pipeline 
@@ -176,6 +180,10 @@ With **mean imputation** and **SMOTE upsampling**, the accuracy with the **Keras
 
 
 Could possibly do cross-validation
+
+Hyperparameter search: random search
+
+
 
 
 
@@ -291,6 +299,10 @@ However, the result is still worse than base model of Ridge or Lasso Regression.
 | 10        | 5          | R squared for test: 0.498 / No dropout layer | 2                   | 10            |
 
 Failed to get Hyperopt to work, but seems like they donot have much example for regression problem. Will look into it later.
+
+#### XGBoost
+
+- could try it
 
 ### Feature Engineer (hasn't done yet)
 
