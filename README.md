@@ -1,4 +1,4 @@
-# Code Challenge for Canvas Analytics
+# Environmental Code Challenge
 
 Jul 18th, 2018
 
